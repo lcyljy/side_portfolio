@@ -18,12 +18,12 @@ partBtn.addEventListener("click", function () {
   sec.value = getItemPart.min % 60;
   check = ctx;
   //clock.js의 itmeset 분,초 표기의 색상 변경
-  document.querySelectorAll('.timeSet')[0].style.backgroundColor = partBtn.style.backgroundColor;
-  document.querySelectorAll('.timeSet')[1].style.backgroundColor = partBtn.style.backgroundColor;
+  document.querySelectorAll('.timeSet')[0].style.backgroundColor = getItemPart.color;
+  document.querySelectorAll('.timeSet')[1].style.backgroundColor = getItemPart.color;
 
   // console.log(partBtn)
   // console.log(check)
-  focusItem.firstElementChild.style.backgroundColor = partBtn.style.backgroundColor;
+  focusItem.firstElementChild.style.backgroundColor = getItemPart.color;
 }
 )
 
@@ -36,12 +36,12 @@ restBtn.addEventListener("click", function () {
   min.value = Math.floor(getItemRest.min / 60);
   sec.value = getItemRest.min % 60;
   check = restCircleCtx;
-  document.querySelectorAll('.timeSet')[0].style.backgroundColor = restBtn.style.backgroundColor;
-  document.querySelectorAll('.timeSet')[1].style.backgroundColor = restBtn.style.backgroundColor;
+  document.querySelectorAll('.timeSet')[0].style.backgroundColor = getItemRest.color;
+  document.querySelectorAll('.timeSet')[1].style.backgroundColor = getItemRest.color;
   console.log(restBtn);
   console.log(check);
 
-  focusItem.lastElementChild.style.backgroundColor = restBtn.style.backgroundColor;
+  focusItem.lastElementChild.style.backgroundColor = getItemRest.color;
 })
 
 // 해당 색 textcontent가 배경색에 들어가도록.
