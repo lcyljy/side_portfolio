@@ -34,3 +34,5 @@ record...
 
    22.06.10
    나는 개멍청하다. branch를 새롭게 열어놓고 main에다가 push했다.
+
+test
