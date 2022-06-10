@@ -6,20 +6,25 @@
 
 
 // 기본값 지정
-const Rest = {
+const Part = {
   color: "#F7BD1F",
   min: 60
 }
-const Part = {
+const Rest = {
   color: "#D9C9E8",
   min: 60
 }
 
-localStorage.setItem("Rest", JSON.stringify(Rest))
 localStorage.setItem("Part", JSON.stringify(Part))
+localStorage.setItem("Rest", JSON.stringify(Rest))
 
-const getItemRest = JSON.parse(localStorage.getItem("Rest"))
 const getItemPart = JSON.parse(localStorage.getItem("Part"))
+const getItemRest = JSON.parse(localStorage.getItem("Rest"))
+
+focusItem.firstElementChild.style.backgroundColor = getItemPart.color;
+focusItem.lastElementChild.style.backgroundColor = getItemRest.color;
+document.querySelectorAll('.timeSet')[0].style.backgroundColor = getItemPart.color;
+document.querySelectorAll('.timeSet')[1].style.backgroundColor = getItemPart.color;
 // getItemPart.color = "#B3D7D2"
 // localStorage.setItem("Part", JSON.stringify(getItemPart))
 // console.log(getItemPart)
@@ -45,7 +50,7 @@ ctx.fillStyle = "#F7BD1F"
 ctx.strokeStyle = "#F7BD1F"
 // arc(x, y, radius, startAngle, endAngle, anticlockwise)
 
-let eachDeg = 360 / partNumber;
+let eachDeg = 360 / getItemPart.min;
 
 function degToRad(deg) {
   return (Math.PI / 180) * deg;
@@ -54,7 +59,11 @@ ctx.translate(temp.x, temp.y)
 ctx.rotate(-95 * Math.PI / 180);
 ctx.translate(-temp.x, -temp.y)
 
-
+// 각도 동기화가 계속 잘 안되서 setInterval을 이용해서 원을 그리는 매 초마다(100밀리초) 값을 재전달함.
+setInterval(function () {
+  eachDeg = 360 / getItemPart.min;
+  restEachDeg = 360 / getItemRest.min;
+}, 100)
 
 let zero = 0;
 let restZero = getItemRest.min;
@@ -69,7 +78,7 @@ function draw(props) {
   console.log("draw running")
 }
 
-// 각각의 값을 일정한 고정값으로 설정해두었을 때는 작동하지만, clock.js의 변경에 따라 값이 변경되면, 제대로 동작하지 않는다. 이유... clock.js에서 partNumber에 대한 값을 조작했고, 이에 따라 eachDeg도 변경되어야하지만. eachDeg에 대한 값은 고정되어있고. 때문에 해당 변수가 변경되지 않는다... 해결법? -> clock.js에서 eachDeg를 재설정.
+// 각각의 값을 일정한 고정값으로 설정해두었을 때는 작동하지만, clock.js의 변경에 따라 값이 변경되면, 제대로 동작하지 않는다. 이유... clock.js에서 partNumber (-> getItemPart.min으로 변경 ver. 1.01)에 대한 값을 조작했고, 이에 따라 eachDeg도 변경되어야하지만. eachDeg에 대한 값은 고정되어있고. 때문에 해당 변수가 변경되지 않는다... 해결법? -> clock.js에서 eachDeg를 재설정.
 
 
 
@@ -89,7 +98,7 @@ let RestTemp = {
 restCircleCtx.fillStyle = "#D9C9E8"
 restCircleCtx.strokeStyle = "#D9C9E8"
 
-let restEachDeg = 360 / restPartNumber;
+let restEachDeg = 360 / getItemRest.min;
 
 restCircleCtx.translate(temp.x, temp.y)
 restCircleCtx.rotate(-85 * Math.PI / 180);
@@ -113,13 +122,13 @@ let setStopB = true;
 
 setInterval(function () {
   if (!setStopA) {
-    if (restZero == restPartNumber && zero < partNumber) {
+    if (restZero == getItemRest.min && zero < getItemPart.min) {
       canvas.classList.add('zIndexUp')
       if (zero == 0) { console.log(zero) }
       zero++
       // console.log(`zero: ${zero}`)
       draw(zero);
-    } else if (restZero == restPartNumber && zero == partNumber) {
+    } else if (restZero == getItemRest.min && zero == getItemPart.min) {
       canvas.classList.remove('zIndexUp')
       restZero = 0;
       setStopA = true;
@@ -136,13 +145,13 @@ setInterval(function () {
 
 setInterval(function () {
   if (!setStopB) {
-    if (zero == partNumber && restZero < restPartNumber) {
+    if (zero == getItemPart.min && restZero < getItemRest.min) {
       restCircle.classList.add('zIndexUp')
       if (restZero == 0) { console.log(restZero) }
       restZero++
       // console.log(`restZero: ${restZero}`);
       restDraw(restZero);
-    } else if (zero == partNumber && restZero == restPartNumber) {
+    } else if (zero == getItemPart.min && restZero == getItemRest.min) {
       restCircle.classList.remove('zIndexUp')
       zero = 0;
       setStopB = true;
