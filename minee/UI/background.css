@@ -1,0 +1,47 @@
+.timeCheck{
+  margin-top: 20px;
+  margin-left: 60px;
+  background-color:aliceblue;
+  border: 1px solid green;
+  width: 380px;
+  position: flex;
+  border-radius: 25px;
+  padding: 5px;
+  float: left;
+  height: 200px;
+  
+}
+
+.num{
+  width: 40px;
+  text-align: right;
+}
+
+.timeSet{
+  width: 100px;
+  height: 60px;
+  /* background-color: aquamarine; */
+  border-radius: 15px;
+  margin: 5px;
+  display: relative;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+#centerCircle{
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  /* border: 1px solid green; */
+  z-index: 1000;
+}
+
+#backCircle{
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  /* border: 1px solid black; */
+  z-index: 600;
+}

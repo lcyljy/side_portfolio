@@ -1,0 +1,161 @@
+// let ul = document.querySelector('ul')
+// let li = document.createElement("li");
+
+
+// ul.appendChild(li);
+
+
+// 기본값 지정
+const Rest = {
+  color: "#F7BD1F",
+  min: 60
+}
+const Part = {
+  color: "#D9C9E8",
+  min: 60
+}
+
+localStorage.setItem("Rest", JSON.stringify(Rest))
+localStorage.setItem("Part", JSON.stringify(Part))
+
+const getItemRest = JSON.parse(localStorage.getItem("Rest"))
+const getItemPart = JSON.parse(localStorage.getItem("Part"))
+// getItemPart.color = "#B3D7D2"
+// localStorage.setItem("Part", JSON.stringify(getItemPart))
+// console.log(getItemPart)
+// console.log(Part)
+// console.log(localStorage.getItem("Part"))
+
+const canvas = document.getElementById("canvas")
+// console.log(canvas)
+const ctx = canvas.getContext("2d");
+// console.log(ctx)
+
+
+
+let temp = {
+  x: 150,
+  y: 150,
+  radius: 80,
+  startAngle: 0,
+  endAngle: Math.PI * 2,
+  anticlockwise: false
+}
+ctx.fillStyle = "#F7BD1F"
+ctx.strokeStyle = "#F7BD1F"
+// arc(x, y, radius, startAngle, endAngle, anticlockwise)
+
+let eachDeg = 360 / partNumber;
+
+function degToRad(deg) {
+  return (Math.PI / 180) * deg;
+}
+ctx.translate(temp.x, temp.y)
+ctx.rotate(-95 * Math.PI / 180);
+ctx.translate(-temp.x, -temp.y)
+
+
+
+let zero = 0;
+let restZero = getItemRest.min;
+function draw(props) {
+  ctx.beginPath();
+  ctx.lineWidth = 0.3;
+  ctx.lineTo(temp.x, temp.y)
+  ctx.closePath();
+  ctx.arc(temp.x, temp.y, temp.radius, degToRad(props * eachDeg), degToRad(props * eachDeg + eachDeg), temp.anticlockwise);
+  ctx.fill();
+  ctx.stroke();
+  console.log("draw running")
+}
+
+// 각각의 값을 일정한 고정값으로 설정해두었을 때는 작동하지만, clock.js의 변경에 따라 값이 변경되면, 제대로 동작하지 않는다. 이유... clock.js에서 partNumber에 대한 값을 조작했고, 이에 따라 eachDeg도 변경되어야하지만. eachDeg에 대한 값은 고정되어있고. 때문에 해당 변수가 변경되지 않는다... 해결법? -> clock.js에서 eachDeg를 재설정.
+
+
+
+const restCircle = document.getElementById("restCircle")
+const restCircleCtx = restCircle.getContext("2d");
+
+
+let RestTemp = {
+  x: 150,
+  y: 150,
+  radius: 80,
+  startAngle: Math.PI * 2,
+  endAngle: 0,
+  anticlockwise: true
+}
+
+restCircleCtx.fillStyle = "#D9C9E8"
+restCircleCtx.strokeStyle = "#D9C9E8"
+
+let restEachDeg = 360 / restPartNumber;
+
+restCircleCtx.translate(temp.x, temp.y)
+restCircleCtx.rotate(-85 * Math.PI / 180);
+restCircleCtx.translate(-temp.x, -temp.y)
+
+
+function restDraw(props) {
+  restCircleCtx.beginPath();
+  restCircleCtx.lineWidth = 0.3;
+  restCircleCtx.lineTo(RestTemp.x, RestTemp.y);
+  restCircleCtx.closePath();
+  restCircleCtx.arc(RestTemp.x, RestTemp.y, RestTemp.radius, -degToRad(props * restEachDeg), -degToRad(props * restEachDeg + restEachDeg), RestTemp.anticlockwise);
+  restCircleCtx.fill();
+  restCircleCtx.stroke();
+  console.log("restDraw running")
+
+}
+
+let setStopA = false;
+let setStopB = true;
+
+setInterval(function () {
+  if (!setStopA) {
+    if (restZero == restPartNumber && zero < partNumber) {
+      canvas.classList.add('zIndexUp')
+      if (zero == 0) { console.log(zero) }
+      zero++
+      // console.log(`zero: ${zero}`)
+      draw(zero);
+    } else if (restZero == restPartNumber && zero == partNumber) {
+      canvas.classList.remove('zIndexUp')
+      restZero = 0;
+      setStopA = true;
+      setStopB = false;
+      // canvas 초기화
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.clearRect(0, 0, temp.x * 2, temp.y * 2)
+      ctx.translate(temp.x, temp.y)
+      ctx.rotate(-95 * Math.PI / 180);
+      ctx.translate(-temp.x, -temp.y)
+    }
+  }
+}, 100)
+
+setInterval(function () {
+  if (!setStopB) {
+    if (zero == partNumber && restZero < restPartNumber) {
+      restCircle.classList.add('zIndexUp')
+      if (restZero == 0) { console.log(restZero) }
+      restZero++
+      // console.log(`restZero: ${restZero}`);
+      restDraw(restZero);
+    } else if (zero == partNumber && restZero == restPartNumber) {
+      restCircle.classList.remove('zIndexUp')
+      zero = 0;
+      setStopB = true;
+      setStopA = false;
+      // canvas 초기화
+      restCircleCtx.setTransform(1, 0, 0, 1, 0, 0);
+      restCircleCtx.clearRect(0, 0, temp.x * 2, temp.y * 2)
+      restCircleCtx.translate(temp.x, temp.y)
+      restCircleCtx.rotate(-85 * Math.PI / 180);
+      restCircleCtx.translate(-temp.x, -temp.y)
+    }
+  }
+}, 100)
+
+// 이제 해야하는거.
+// part, rest버튼 눌렀을 때 해당 정보가 로컬스토리지에 저장되도록, 그 때 시간(분,초) 및 색상이 저장되어야함.

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./UI/background.css">
+  <link rel="stylesheet" href="./UI/nav.css">
+</head>
+
+<body>
+  <!-- <nav>
+    <ul>
+      <li><a href="#">HOME</a></li>
+      <li><a href="#">COLOR</a></li>
+      <li><a href="#">REST</a></li>
+      <li><a href="#">RECORD</a></li>
+      <li><a href="#">RESET</a></li>
+    </ul>
+  </nav> -->
+  <div id="focusItem">
+    <div class="focus ">Part</div>
+    <div class="focus hidden">Rest</div>
+  </div>
+  <div class="timeCheck">
+    <div class="time"><span>지정</span>
+      <button>1min</button>
+      <button>30min</button>
+      <button>1hour</button>
+      <button>2hour</button>
+      <button class="clearBtn">clear</button>
+    </div>
+    <div class="time"><span>수동</span>
+      <input class="min timeSet" type="number" placeholder="001" min="0" step="1" value="1" />m
+      <input class="sec timeSet" type="number" placeholder="01" min="0" step="1" />s
+    </div>
+    <div><span>반복</span>
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>4</button>
+      <button>5</button>
+      <input type="number" placeholder="6" class="num"><button>+</button>
+
+    </div>
+
+  </div>
+
+  <div class="sideNav">
+    <div class="check">
+      <button id="partBtn">Part</button>
+      <button id="restBtn">Rest</button>
+    </div>
+
+
+    <ul>
+      <li><button>#F7BD1F</button></li>
+      <li><button>#D9C9E8</button></li>
+      <li><button>#B3D7D2</button></li>
+      <li><button>#EBC5CF</button></li>
+      <li><button>#A2BCD2</button></li>
+      <li><button>#CDC0BC</button></li>
+      <li><button>#D2174C</button></li>
+    </ul>
+    <div class="check pauseBtn">
+      <button id="startBtn">시작</button>
+      <button id="pauseRealBtn">일시정지</button>
+      <button id="stopBtn">정지</button>
+    </div>
+  </div>
+  <div class="canvas-wrap">
+
+    <canvas width="300" height="300" id="backCircle"></canvas>
+    <canvas width="300" height="300" id="centerCircle"></canvas>
+    <canvas width="300" height="300" id="restCircle"></canvas>
+    <canvas width="300" height="300" id="canvas">
+
+    </canvas>
+    <input type="number" min="1" max="360" id="input-part">
+  </div>
+  <script src="./js/clock.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./UI/background.js"></script>
+  <script src="./UI/nav.js"></script>
+</body>
+
+</html>

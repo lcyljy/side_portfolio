@@ -1,0 +1,72 @@
+.sideNav{
+  bottom: 20%;
+  top: 20%;
+  right: 0;
+  position: fixed;
+  width: 130px;
+  height: 500px;
+  background-color: red;
+  z-index: 1500;
+  padding: 0;
+  border: 1px solid black; 
+  border-radius: 35px 0 0 35px ;
+  
+}
+
+#partBtn{
+  background-color: #F7BD1F;
+}
+#restBtn{
+  background-color: #D9C9E8;
+}
+
+.sideNav .check{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.sideNav .check button {
+  border-radius: 50px;
+}
+
+.sideNav .pauseBtn {
+  font-size: 0.8rem;
+}
+
+
+.sideNav ul li{
+  list-style:none;
+  color: white;
+  background-color: #2d2d2d;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  line-height: 15px;
+  text-align: center;
+}
+
+.sideNav ul li:first-child{
+  border-radius: 15px 0 0 0;
+}
+.sideNav ul li:last-child{
+  border-radius: 0 0 0 15px;
+}
+
+.sideNav ul li button {
+  width: 80px;
+  padding: 10px 0 10px 0;
+  margin: 5px;
+  border-radius: 35px;
+}
+.sideNav ul li button:hover{
+  background-color:aquamarine;
+}
+
+.sideNav ul li a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  font-size: 1rem;
+  font-weight: bold;
+}
