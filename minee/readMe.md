@@ -31,3 +31,6 @@ record...
 
    22.06.10
    (fix) part, rest 버튼 눌렀을 때 해당 focusBox, clockBox 등의 색이 변경안되는 것 수정
+
+   22.06.10
+   나는 개멍청하다. branch를 새롭게 열어놓고 main에다가 push했다.
