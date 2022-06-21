@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./UI/background.css">
   <link rel="stylesheet" href="./UI/nav.css">
+  <link rel="stylesheet" href="./css/mobile.css">
+  <link rel="stylesheet" href="./UI/timer.css">
+  <script src="https://kit.fontawesome.com/7e92e4cb8f.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -22,50 +25,65 @@
       <li><a href="#">RESET</a></li>
     </ul>
   </nav> -->
-  <div id="focusItem">
-    <div class="focus ">Part</div>
-    <div class="focus hidden">Rest</div>
+  <div class="mbStyle">
+    <button id="mbSetting"><i class="fa-light fa-gear"></i></button>
   </div>
-  <div class="timeCheck">
-    <div class="time"><span>지정</span>
-      <button>1min</button>
-      <button>30min</button>
-      <button>1hour</button>
-      <button>2hour</button>
-      <button class="clearBtn">clear</button>
+  <div class="clockSystem">
+    <div id="focusItem">
+      <div class="focus ">Part</div>
+      <div class="focus hidden">Rest</div>
     </div>
-    <div class="time"><span>수동</span>
-      <input class="min timeSet" type="number" placeholder="001" min="0" step="1" value="1" />m
-      <input class="sec timeSet" type="number" placeholder="01" min="-1" step="1" />s
+    <div class="timeCheck">
+      <div class="time"><span>지정</span>
+        <button>1min</button>
+        <button>30min</button>
+        <button>1hour</button>
+        <button>2hour</button>
+        <button class="clearBtn">clear</button>
+      </div>
+      <div class="time"><span>수동</span>
+        <input class="min timeSet" type="number" placeholder="001" min="0" step="1" value="1" />m
+        <input class="sec timeSet" type="number" placeholder="01" min="-1" step="1" />s
+      </div>
+      <!-- <div><span>반복</span>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+        <input type="number" placeholder="6" class="num"><button>+</button>
+      </div> -->
     </div>
-    <div><span>반복</span>
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
-      <button>4</button>
-      <button>5</button>
-      <input type="number" placeholder="6" class="num"><button>+</button>
-
-    </div>
-
   </div>
-
+  <div class="timer">
+    <div class="partTimer time">
+      <div>Part</div>
+      <input class="min timeSet" type="number" placeholder="001" min="0" step="1" value="1" readonly /><span> :</span>
+      <input class="sec timeSet" type="number" placeholder="0" min="-1" value="0" step="1" readonly />
+    </div>
+    <div class="restTimer time">
+      <div>Rest</div>
+      <input class="min timeSet" type="number" placeholder="001" min="0" step="1" value="1" readonly /><span> :</span>
+      <input class="sec timeSet" type="number" placeholder="0" min="-1" value="0" step="1" readonly />
+    </div>
+  </div>
   <div class="sideNav">
     <div class="check">
       <button id="partBtn">Part</button>
       <button id="restBtn">Rest</button>
     </div>
 
-
-    <ul>
-      <li><button>#F7BD1F</button></li>
-      <li><button>#D9C9E8</button></li>
-      <li><button>#B3D7D2</button></li>
-      <li><button>#EBC5CF</button></li>
-      <li><button>#A2BCD2</button></li>
-      <li><button>#CDC0BC</button></li>
-      <li><button>#D2174C</button></li>
-    </ul>
+    <div class="mbColor">
+      <ul>
+        <li><button>#F7BD1F</button></li>
+        <li><button>#D9C9E8</button></li>
+        <li><button>#B3D7D2</button></li>
+        <li><button>#EBC5CF</button></li>
+        <li><button>#A2BCD2</button></li>
+        <li><button>#CDC0BC</button></li>
+        <li><button>#D2174C</button></li>
+      </ul>
+    </div>
     <div class="check pauseBtn">
       <button id="startBtn">시작</button>
       <button id="pauseRealBtn">일시정지</button>
@@ -80,12 +98,14 @@
     <canvas width="300" height="300" id="canvas">
 
     </canvas>
-    <input type="number" min="1" max="360" id="input-part">
+
   </div>
   <script src="./js/clock.js"></script>
   <script src="./js/main.js"></script>
   <script src="./UI/background.js"></script>
   <script src="./UI/nav.js"></script>
+  <script src="./js/mobile.js"></script>
+  <script src="./UI/timer.js"></script>
 </body>
 
 </html>
