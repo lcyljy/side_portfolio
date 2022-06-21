@@ -75,7 +75,8 @@ function draw(props) {
   ctx.arc(temp.x, temp.y, temp.radius, degToRad(props * eachDeg), degToRad(props * eachDeg + eachDeg), temp.anticlockwise);
   ctx.fill();
   ctx.stroke();
-  console.log("draw running")
+
+  // console.log("draw running")
 }
 
 // 각각의 값을 일정한 고정값으로 설정해두었을 때는 작동하지만, clock.js의 변경에 따라 값이 변경되면, 제대로 동작하지 않는다. 이유... clock.js에서 partNumber (-> getItemPart.min으로 변경 ver. 1.01)에 대한 값을 조작했고, 이에 따라 eachDeg도 변경되어야하지만. eachDeg에 대한 값은 고정되어있고. 때문에 해당 변수가 변경되지 않는다... 해결법? -> clock.js에서 eachDeg를 재설정.
@@ -113,7 +114,7 @@ function restDraw(props) {
   restCircleCtx.arc(RestTemp.x, RestTemp.y, RestTemp.radius, -degToRad(props * restEachDeg), -degToRad(props * restEachDeg + restEachDeg), RestTemp.anticlockwise);
   restCircleCtx.fill();
   restCircleCtx.stroke();
-  console.log("restDraw running")
+  // console.log("restDraw running")
 
 }
 
