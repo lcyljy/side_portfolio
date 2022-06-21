@@ -16,13 +16,13 @@ padStartNumber();
 // for (let i = 1; i < time[0].clientHeight; i++) {
 //   = document.querySelector(`body > div.timeCheck > div:nth-child(1) > button:nth-child(${i}`)
 // }
-const sec60Btn = document.querySelector("body > div.timeCheck > div:nth-child(1) > button:nth-child(2)")
+const sec60Btn = document.querySelector("body > div.clockSystem > div.timeCheck > div:nth-child(1) > button:nth-child(2)")
 // console.log(sec60Btn.textContent);
-const sec1800Btn = document.querySelector("body > div.timeCheck > div:nth-child(1) > button:nth-child(3)")
+const sec1800Btn = document.querySelector("body > div.clockSystem > div.timeCheck > div:nth-child(1) > button:nth-child(3)")
 // console.log(sec1800Btn.textContent)
-const sec3600Btn = document.querySelector("body > div.timeCheck > div:nth-child(1) > button:nth-child(4)")
+const sec3600Btn = document.querySelector("body > div.clockSystem > div.timeCheck > div:nth-child(1) > button:nth-child(4)")
 // console.log(sec3600Btn.textContent)
-const sec7200Btn = document.querySelector("body > div.timeCheck > div:nth-child(1) > button:nth-child(5)")
+const sec7200Btn = document.querySelector("body > div.clockSystem > div.timeCheck > div:nth-child(1) > button:nth-child(5)")
 // console.log(sec7200Btn.textContent);
 // [a,b,c] = [1,2,3] 비구조화 할당을 이용하면 보다 간략하게 구현 가능할 것 같은데...?
 
@@ -31,12 +31,12 @@ const clearBtn = document.querySelector('.clearBtn');
 const clockSynchronization = function () {
   if (check == ctx) {
     getItemPart.min = (+min.value * 60) + +sec.value;
-    partNumber = getItemPart.min
+    partNumber = getItemPart.min;
     eachDeg = 360 / partNumber;
     localStorage.setItem("Part", JSON.stringify(getItemPart))
   } else {
     getItemRest.min = (+min.value * 60) + +sec.value;
-    restPartNumber = getItemRest.min
+    restPartNumber = getItemRest.min;
     eachDeg = 360 / restPartNumber;
     localStorage.setItem("Rest", JSON.stringify(getItemRest))
   }
