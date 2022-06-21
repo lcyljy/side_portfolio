@@ -16,22 +16,40 @@ const sec7200Btn = document.querySelector("body > div.timeCheck > div:nth-child(
 // console.log(sec7200Btn.textContent);
 const clearBtn = document.querySelector('.clearBtn');
 
+const clockSynchronization = function () {
+  if (check == ctx) {
+    getItemPart.min = (+min.value * 60) + +sec.value;
+    partNumber = getItemPart.min
+    eachDeg = 360 / partNumber;
+    localStorage.setItem("Part", JSON.stringify(getItemPart))
+  } else {
+    getItemRest.min = (+min.value * 60) + +sec.value;
+    restPartNumber = getItemRest.min
+    eachDeg = 360 / restPartNumber;
+    localStorage.setItem("Rest", JSON.stringify(getItemRest))
+  }
+}
+
 
 sec60Btn.addEventListener("click", function () {
   stopBtnContent();
   min.value++
+  clockSynchronization();
 })
 sec1800Btn.addEventListener("click", function () {
   stopBtnContent();
   min.value = +min.value + +30
+  clockSynchronization();
 })
 sec3600Btn.addEventListener("click", function () {
   stopBtnContent();
   min.value = +min.value + +60
+  clockSynchronization();
 })
 sec7200Btn.addEventListener("click", function () {
   stopBtnContent();
   min.value = +min.value + +120
+  clockSynchronization();
 })
 
 // 너무 하드코딩인데.. 간략하게 못하나.? id이름을 정해서하면...
@@ -41,6 +59,7 @@ clearBtn.addEventListener("click", function () {
   stopBtnContent();
   min.value = +0;
   sec.value = +0;
+  clockSynchronization();
 })
 
 // time
@@ -56,35 +75,12 @@ sec.value = String(sec.value).padStart(2, "0");
 min.addEventListener("change", function () {
   stopBtnContent();
   min.value = String(min.value).padStart(3, "0");
-  if (check == ctx) {
-    getItemPart.min = (+min.value * 60) + +sec.value;
-    partNumber = getItemPart.min
-    eachDeg = 360 / partNumber;
-    localStorage.setItem("Part", JSON.stringify(getItemPart))
-  } else {
-    getItemRest.min = (+min.value * 60) + +sec.value;
-    restPartNumber = getItemRest.min
-    eachDeg = 360 / restPartNumber;
-    localStorage.setItem("Rest", JSON.stringify(getItemRest))
-  }
-
+  clockSynchronization()
 })
 sec.addEventListener("change", function () {
   stopBtnContent();
   sec.value = String(sec.value).padStart(2, "0");
-  if (check == ctx) {
-    getItemPart.min = (+min.value * 60) + +sec.value;
-    partNumber = getItemPart.min
-    eachDeg = 360 / partNumber;
-    console.log(partNumber)
-    localStorage.setItem("Part", JSON.stringify(getItemPart))
-  } else {
-    getItemRest.min = (+min.value * 60) + +sec.value;
-    restPartNumber = getItemRest.min
-    eachDeg = 360 / restPartNumber;
-    localStorage.setItem("Rest", JSON.stringify(getItemRest))
-  }
-
+  clockSynchronization();
 })
 
 
