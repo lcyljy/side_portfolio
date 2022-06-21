@@ -1,14 +1,12 @@
 .timeCheck{
-  margin-top: 20px;
+  margin-top: 10px;
   margin-left: 60px;
   background-color:aliceblue;
   border: 1px solid green;
-  width: 380px;
-  position: flex;
+  width: 360px;
   border-radius: 25px;
-  padding: 5px;
-  float: left;
-  height: 200px;
+  height: 120px;
+
   
 }
 
@@ -32,16 +30,39 @@
 
 #centerCircle{
   position: absolute;
-  width: 500px;
-  height: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
   /* border: 1px solid green; */
   z-index: 1000;
 }
 
 #backCircle{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   position: absolute;
-  width: 500px;
-  height: 500px;
+  width: 300px;
+  height: 300px;
   /* border: 1px solid black; */
   z-index: 600;
 }
+
+@media only screen and (max-width: 740px){
+ 
+  .timeCheck{
+    width: 270px;
+    height: 120px;
+  }
+  .timeCheck button {
+    width: 60px;
+  }
+  .timeSet{
+    width: 50px;
+    height: 30px;
+    font-size: 1rem;
+  }
+}
+

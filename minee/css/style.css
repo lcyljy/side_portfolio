@@ -1,6 +1,4 @@
 body{
-  min-width: 500px;
-  min-height: 500px;
   background-color: aliceblue;
 }
 
@@ -37,7 +35,8 @@ nav ul li a:hover{
 .canvas-wrap{
   top: 20%;
   bottom: 20%;
-  position: fixed;
+  display: flex;
+  justify-content: center;
   width: 500px;
   /* border: 1px solid rgba(204, 214, 186, 0.548); */
 }
@@ -46,8 +45,11 @@ nav ul li a:hover{
 #canvas{
   position: absolute;
   background-color: aliceblue;
-  width: 500px;
-  height: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
 
 }
 
@@ -60,8 +62,11 @@ nav ul li a:hover{
 #restCircle{
   position: absolute;
   background-color: aliceblue;
-  width: 500px;
-  height: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
 
 }
 
@@ -73,17 +78,44 @@ nav ul li a:hover{
   display: none;
 }
 
+.clockSystem{
+  margin-top: 20px;
+  border: 1px solid green;
+  width: 100%;
+  display: flex;
+  height: 140px;
+  text-align: center;
+  justify-content: center;
+}
+
 .focus{
   margin-top: 20px;
   margin-left: 60px;
-  width: 300px;
-  height: 200px;
+  width: 160px;
+  height: 100px;
   background-color: rgba(132, 255, 255, 0.3);
-  position: flex;
-  float: left;
   border-radius: 35px;
-  text-align: center;
-  font-size: 5rem;
-  line-height: 200px;
+  font-size: 3rem;
+  line-height: 100px;
+}
 
+@media only screen and (max-width: 740px){
+  .clockSystem{
+  display: none;
+
+  
+  }
+  .focus {
+    width: 80px;
+    height: 50px;
+    font-size: 1rem;
+    line-height: 50px;
+  }
+  .sideNav{
+  display:none;
+  }
+  
+/* 
+  #restCircle, #canvas, #centerCircle, #backCircle{
+  transform: translate(-20%, 0); } */
 }
