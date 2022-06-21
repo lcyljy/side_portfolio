@@ -24,8 +24,8 @@ partBtn.addEventListener("click", function () {
   // console.log(partBtn)
   // console.log(check)
   focusItem.firstElementChild.style.backgroundColor = getItemPart.color;
-}
-)
+  padStartNumber();
+})
 
 restBtn.addEventListener("click", function () {
   // rest/part focus 변경
@@ -42,6 +42,7 @@ restBtn.addEventListener("click", function () {
   console.log(check);
 
   focusItem.lastElementChild.style.backgroundColor = getItemRest.color;
+  padStartNumber();
 })
 
 // 해당 색 textcontent가 배경색에 들어가도록.
