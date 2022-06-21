@@ -63,14 +63,18 @@ for (let i = 0; i < colorBtn.length; i++) {
           document.querySelectorAll('.timeSet')[0].style.backgroundColor = getItemPart.color,
           document.querySelectorAll('.timeSet')[1].style.backgroundColor = getItemPart.color,
           partBtn.style.backgroundColor = getItemPart.color,
-          focusItem.firstElementChild.style.backgroundColor = partBtn.style.backgroundColor)
+          focusItem.firstElementChild.style.backgroundColor = partBtn.style.backgroundColor,
+          partTimerMin.style.backgroundColor = getItemPart.color,
+          partTimerSec.style.backgroundColor = getItemPart.color)
         : (
           getItemRest.color = event.target.textContent,
           localStorage.setItem("Rest", JSON.stringify(getItemRest)),
           document.querySelectorAll('.timeSet')[0].style.backgroundColor = getItemRest.color,
           document.querySelectorAll('.timeSet')[1].style.backgroundColor = getItemRest.color,
           restBtn.style.backgroundColor = getItemRest.color,
-          focusItem.lastElementChild.style.backgroundColor = restBtn.style.backgroundColor)
+          focusItem.lastElementChild.style.backgroundColor = restBtn.style.backgroundColor,
+          restTimerMin.style.backgroundColor = getItemRest.color,
+          restTimerSec.style.backgroundColor = getItemRest.color)
     )
   )
 }
@@ -141,9 +145,16 @@ const stopBtnContent = function () {
   console.log(setStopA)
   console.log(setStopB)
   console.log(zero, partNumber, restZero, restPartNumber)
+  // timer 조작
+  restTimerMin.value = Math.floor(getItemRest.min / 60);
+  restTimerSec.value = getItemRest.min % 60;
+  partTimerMin.value = Math.floor(getItemPart.min / 60);
+  partTimerSec.value = getItemPart.min % 60;
+
   if (zero == partNumber && restZero < restPartNumber) {
     console.log("stopBtn clicked")
     setStopB = true;
+
     // canvas 초기화
     restCircleCtx.setTransform(1, 0, 0, 1, 0, 0);
     restCircleCtx.clearRect(0, 0, temp.x * 2, temp.y * 2)
@@ -152,6 +163,8 @@ const stopBtnContent = function () {
     restCircleCtx.translate(-temp.x, -temp.y)
   } else {
     setStopA = true;
+
+
     // canvas 초기화
     ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.clearRect(0, 0, temp.x * 2, temp.y * 2)
@@ -164,3 +177,13 @@ const stopBtnContent = function () {
 startBtn.addEventListener("click", startBtnContent)
 pauseRealBtn.addEventListener("click", pauseRealBtnContent)
 stopBtn.addEventListener("click", stopBtnContent)
+
+// 해당 nav바를 눌렀을 때 닫히고. 다시 열리게끔 하고 싶은데...
+// console.log(document.querySelector(".sideNav"))
+// const sideNav = document.querySelector(".sideNav");
+// console.log(sideNav)
+// sideNav.addEventListener("click",
+//   function (e) {
+//     if (e.target !== e.currentTarget) return;
+//     console.log("clicked!!")
+//   })
