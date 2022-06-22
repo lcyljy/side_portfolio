@@ -20,9 +20,9 @@ const sec60Btn = document.querySelector("body > div.clockSystem > div.timeCheck 
 // console.log(sec60Btn.textContent);
 const sec1800Btn = document.querySelector("body > div.clockSystem > div.timeCheck > div:nth-child(1) > button:nth-child(3)")
 // console.log(sec1800Btn.textContent)
-const sec3600Btn = document.querySelector("body > div.clockSystem > div.timeCheck > div:nth-child(1) > button:nth-child(4)")
-// console.log(sec3600Btn.textContent)
-const sec7200Btn = document.querySelector("body > div.clockSystem > div.timeCheck > div:nth-child(1) > button:nth-child(5)")
+// const sec3600Btn = document.querySelector("body > div.clockSystem > div.timeCheck > div:nth-child(1) > button:nth-child(4)")
+// // console.log(sec3600Btn.textContent)
+// const sec7200Btn = document.querySelector("body > div.clockSystem > div.timeCheck > div:nth-child(1) > button:nth-child(5)")
 // console.log(sec7200Btn.textContent);
 // [a,b,c] = [1,2,3] 비구조화 할당을 이용하면 보다 간략하게 구현 가능할 것 같은데...?
 
@@ -54,16 +54,16 @@ sec1800Btn.addEventListener("click", function () {
   min.value = +min.value + +30
   clockSynchronization();
 })
-sec3600Btn.addEventListener("click", function () {
-  stopBtnContent();
-  min.value = +min.value + +60
-  clockSynchronization();
-})
-sec7200Btn.addEventListener("click", function () {
-  stopBtnContent();
-  min.value = +min.value + +120
-  clockSynchronization();
-})
+// sec3600Btn.addEventListener("click", function () {
+//   stopBtnContent();
+//   min.value = +min.value + +60
+//   clockSynchronization();
+// })
+// sec7200Btn.addEventListener("click", function () {
+//   stopBtnContent();
+//   min.value = +min.value + +120
+//   clockSynchronization();
+// })
 
 // 너무 하드코딩인데.. 간략하게 못하나.? id이름을 정해서하면...
 
