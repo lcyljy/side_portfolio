@@ -103,20 +103,6 @@ setInterval(function () {
 }, 100)
 
 
-// partTimer, restTimer 를 바탕으로 해당 숫자 다운되는 것.
-// setInterval(
-//   function () {
-//     timerMin.value = min.value;
-//     timerSec.value = sec.value;
-//     // timerMin = min.value;
-//   }, 100
-// )
-
-// setInterval(
-//   // if(!setStopA) {
-
-//   // }
-// )
 document.querySelector(".canvas-wrap").addEventListener("click", function () {
   document.querySelector(".canvas-wrap").classList.toggle("hidden");
   document.querySelector(".timer").classList.toggle("hidden");
