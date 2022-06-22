@@ -14,9 +14,11 @@ const Rest = {
   color: "#D9C9E8",
   min: 60
 }
+if (!localStorage.getItem("Part") && !localStorage.getItem("Rest")) {
 
-localStorage.setItem("Part", JSON.stringify(Part))
-localStorage.setItem("Rest", JSON.stringify(Rest))
+  localStorage.setItem("Part", JSON.stringify(Part))
+  localStorage.setItem("Rest", JSON.stringify(Rest))
+}
 
 const getItemPart = JSON.parse(localStorage.getItem("Part"))
 const getItemRest = JSON.parse(localStorage.getItem("Rest"))
@@ -169,3 +171,4 @@ setInterval(function () {
 
 // 이제 해야하는거.
 // part, rest버튼 눌렀을 때 해당 정보가 로컬스토리지에 저장되도록, 그 때 시간(분,초) 및 색상이 저장되어야함.
+
