@@ -49,20 +49,33 @@ restBtn.addEventListener("click", function () {
   padStartNumber();
 })
 
+
+let colorDocs = [
+  "#F7BD1F",
+  "#D9C9E8",
+  "#B3D7D2",
+  "#EBC5CF",
+  "#A2BCD2",
+  "#CDC0BC",
+  "#D2174C"
+]
+for (let i = 0; i < colorDocs.length; i++) {
+  console.log(colorDocs[i])
+}
 // 해당 색 textcontent가 배경색에 들어가도록.
-for (let i = 0; i < colorBtn.length; i++) {
-  colorBtn[i].style.backgroundColor = colorBtn[i].textContent;
+for (let i = 0; i < colorDocs.length; i++) {
+  colorBtn[i].style.backgroundColor = colorDocs[i]
   colorBtn[i].addEventListener("click",
     // (event) => {
-    //   console.log(event.target.textContent)
-    // }
+    //   console.log(event.target.style.backgroundColor)
+    // },
     (event) => (
 
-      check.fillStyle = event.target.textContent,
-      check.strokeStyle = event.target.textContent,
+      check.fillStyle = event.target.style.backgroundColor,
+      check.strokeStyle = event.target.style.backgroundColor,
       (check == ctx)
         ? (
-          getItemPart.color = event.target.textContent,
+          getItemPart.color = event.target.style.backgroundColor,
           localStorage.setItem("Part", JSON.stringify(getItemPart)),
           document.querySelectorAll('.timeSet')[0].style.backgroundColor = getItemPart.color,
           document.querySelectorAll('.timeSet')[1].style.backgroundColor = getItemPart.color,
@@ -71,7 +84,7 @@ for (let i = 0; i < colorBtn.length; i++) {
           partTimerMin.style.backgroundColor = getItemPart.color,
           partTimerSec.style.backgroundColor = getItemPart.color)
         : (
-          getItemRest.color = event.target.textContent,
+          getItemRest.color = event.target.style.backgroundColor,
           localStorage.setItem("Rest", JSON.stringify(getItemRest)),
           document.querySelectorAll('.timeSet')[0].style.backgroundColor = getItemRest.color,
           document.querySelectorAll('.timeSet')[1].style.backgroundColor = getItemRest.color,
