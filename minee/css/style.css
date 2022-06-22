@@ -117,6 +117,9 @@ nav ul li a:hover{
   .hidden{
     display: none;
   }
+  .mbOpacity{
+    opacity: 0.4;
+  }
 /* 
   #restCircle, #canvas, #centerCircle, #backCircle{
   transform: translate(-20%, 0); } */
