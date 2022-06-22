@@ -112,12 +112,14 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     border-radius: 35px;
+
     
   }
 
 
   .sideNav ul li button {
     width: 80px;
+    height: 30px;
     padding: 5px 0 5px 0px;
     /* margin: 5px; */
     border-radius: 35px;
@@ -137,7 +139,6 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-
   }
 
   .sideNavBox{
