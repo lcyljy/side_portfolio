@@ -5,6 +5,10 @@ const colorBtn = document.querySelectorAll(".sideNav ul li button")
 const partBtn = document.getElementById("partBtn");
 const restBtn = document.getElementById("restBtn");
 
+if (localStorage.getItem("Part") && localStorage.getItem("Rest")) {
+  partBtn.style.backgroundColor = getItemPart.color;
+  restBtn.style.backgroundColor = getItemRest.color;
+}
 
 let check = ctx;
 // ctx restCircleCtx main.js로부터 가져옴
