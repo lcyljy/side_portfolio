@@ -57,11 +57,7 @@ let colorDocs = [
   "#EBC5CF",
   "#A2BCD2",
   "#CDC0BC",
-  "#D2174C",
-  "#FF7396",
-  "#F4E06D",
-  "#FFFFDE",
-  "#C499BA"
+  "#D2174C"
 ]
 for (let i = 0; i < colorDocs.length; i++) {
   console.log(colorDocs[i])

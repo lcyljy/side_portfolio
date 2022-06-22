@@ -51,7 +51,7 @@ sec60Btn.addEventListener("click", function () {
 })
 sec1800Btn.addEventListener("click", function () {
   stopBtnContent();
-  min.value = +min.value + +30;
+  min.value = +min.value + +30
   clockSynchronization();
 })
 // sec3600Btn.addEventListener("click", function () {
