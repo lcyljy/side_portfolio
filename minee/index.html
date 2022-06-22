@@ -25,6 +25,9 @@
       <li><a href="#">RESET</a></li>
     </ul>
   </nav> -->
+  <div class="localClear"><button>localClear</button>
+  </div>
+  <button class="checkPrint">check</button>
   <div class="mbStyle">
     <button id="mbSetting"><i class="fa-light fa-gear"></i></button>
     <button id="mbMinee">Minee</button>
@@ -63,12 +66,12 @@
   <div class="timer hidden">
     <div class="partTimer time">
       <div>Part</div>
-      <input class="min timeSet" type="number" placeholder="001" min="0" step="1" readonly /><span> :</span>
+      <input class="min timeSet" type="number" placeholder="001" min="0" value="1" step="1" readonly /><span> :</span>
       <input class="sec timeSet" type="number" placeholder="0" min="-1" step="1" readonly />
     </div>
     <div class="restTimer time">
       <div>Rest</div>
-      <input class="min timeSet" type="number" placeholder="001" min="0" step="1" readonly /><span> :</span>
+      <input class="min timeSet" type="number" placeholder="001" min="0" value="1" step="1" readonly /><span> :</span>
       <input class="sec timeSet" type="number" placeholder="0" min="-1" step="1" readonly />
     </div>
   </div>
@@ -77,22 +80,23 @@
       <button id="partBtn">Part</button>
       <button id="restBtn">Rest</button>
     </div>
-
-    <div class="mbColor">
-      <ul>
-        <li><button>#F7BD1F</button></li>
-        <li><button>#D9C9E8</button></li>
-        <li><button>#B3D7D2</button></li>
-        <li><button>#EBC5CF</button></li>
-        <li><button>#A2BCD2</button></li>
-        <li><button>#CDC0BC</button></li>
-        <li><button>#D2174C</button></li>
-      </ul>
-    </div>
-    <div class="check pauseBtn">
-      <button id="startBtn">시작</button>
-      <button id="pauseRealBtn">일시정지</button>
-      <button id="stopBtn">정지</button>
+    <div class="sideNavBox">
+      <div class="mbColor">
+        <ul>
+          <li><button>#F7BD1F</button></li>
+          <li><button>#D9C9E8</button></li>
+          <li><button>#B3D7D2</button></li>
+          <li><button>#EBC5CF</button></li>
+          <li><button>#A2BCD2</button></li>
+          <li><button>#CDC0BC</button></li>
+          <li><button>#D2174C</button></li>
+        </ul>
+      </div>
+      <div class="check pauseBtn">
+        <button id="startBtn">시작</button>
+        <button id="pauseRealBtn">일시정지</button>
+        <button id="stopBtn">정지</button>
+      </div>
     </div>
   </div>
   <div class="canvas-wrap mbOpacity">
