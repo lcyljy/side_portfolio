@@ -18,6 +18,11 @@ let timerSec = timer.querySelector(".sec")
 // console.log(timerMin.value);
 // console.log(timerSec.value);
 
+if (localStorage.getItem("Part") && localStorage.getItem("Rest")) {
+  partTimerMin.value = Math.floor(getItemPart.min / 60);
+
+}
+
 // 초기 자리값 설정
 const partTimerPadStart = function () {
   partTimerMin.value = String(partTimerMin.value).padStart(3, "0");
@@ -36,9 +41,11 @@ min.addEventListener("change", function () {
     partTimerMin.value = min.value;
     partTimerSec.value = sec.value;
     partTimerPadStart();
+    restTimerPadStart();
   } else {
     restTimerMin.value = min.value;
     restTimerSec.value = sec.value;
+    partTimerPadStart();
     restTimerPadStart();
   }
 
@@ -53,6 +60,8 @@ sec.addEventListener("change", function () {
   } else {
     restTimerMin.value = min.value;
     restTimerSec.value = sec.value;
+    partTimerPadStart();
+    restTimerPadStart();
   }
 })
 

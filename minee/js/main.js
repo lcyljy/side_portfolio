@@ -15,13 +15,21 @@ const Rest = {
   min: 60
 }
 if (!localStorage.getItem("Part") && !localStorage.getItem("Rest")) {
-
   localStorage.setItem("Part", JSON.stringify(Part))
   localStorage.setItem("Rest", JSON.stringify(Rest))
+
 }
+// console.log(min.value)
 
 const getItemPart = JSON.parse(localStorage.getItem("Part"))
 const getItemRest = JSON.parse(localStorage.getItem("Rest"))
+
+if (localStorage.getItem("Part") && localStorage.getItem("Rest")) {
+  min.value = Math.floor(getItemPart.min / 60);
+  sec.value = getItemRest.min % 60;
+  // partTimerMin.value = min.value;
+  padStartNumber();
+}
 
 focusItem.firstElementChild.style.backgroundColor = getItemPart.color;
 focusItem.lastElementChild.style.backgroundColor = getItemRest.color;
