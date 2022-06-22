@@ -59,10 +59,10 @@ function lineDraw() {
 }
 lineDraw();
 
-console.log(document.querySelectorAll("timeSet"))
+// console.log(document.querySelectorAll("timeSet"))
 
-console.log(document.getElementById("centerCircle"))
-document.getElementById("centerCircle").addEventListener("click", function () {
+// console.log(document.getElementById("centerCircle"))
+// document.getElementById("centerCircle").addEventListener("click", function () {
 
-  document.querySelector(".timer").style.zIndex = 10000;
-})
+//   document.querySelector(".timer").style.zIndex = 10000;
+// })

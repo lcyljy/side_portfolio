@@ -109,8 +109,6 @@ document.querySelector(".canvas-wrap").addEventListener("click", function () {
 })
 
 document.querySelector(".timer").addEventListener("click", function () {
-  document.querySelector(".canvas-wrap").addEventListener("click", function () {
-    document.querySelector(".canvas-wrap").classList.toggle("hidden");
-    document.querySelector(".timer").classList.toggle("hidden");
-  })
+  document.querySelector(".canvas-wrap").classList.toggle("hidden");
+  document.querySelector(".timer").classList.toggle("hidden");
 })
