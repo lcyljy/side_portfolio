@@ -21,8 +21,8 @@ if (!localStorage.getItem("Part") && !localStorage.getItem("Rest")) {
 }
 // console.log(min.value)
 
-const getItemPart = JSON.parse(localStorage.getItem("Part"))
-const getItemRest = JSON.parse(localStorage.getItem("Rest"))
+let getItemPart = JSON.parse(localStorage.getItem("Part"))
+let getItemRest = JSON.parse(localStorage.getItem("Rest"))
 
 if (localStorage.getItem("Part") && localStorage.getItem("Rest")) {
   min.value = Math.floor(getItemPart.min / 60);
@@ -194,3 +194,29 @@ setInterval(function () {
 // 이제 해야하는거.
 // part, rest버튼 눌렀을 때 해당 정보가 로컬스토리지에 저장되도록, 그 때 시간(분,초) 및 색상이 저장되어야함.
 
+// local clear Button
+console.log(document.querySelector(".localClear"));
+const localClearBtn = document.querySelector(".localClear button");
+console.log(localClearBtn)
+
+localClearBtn.addEventListener("click",
+  function () {
+    stopBtnContent();
+    localStorage.clear();
+    localStorage.setItem("Part", JSON.stringify(Part))
+    localStorage.setItem("Rest", JSON.stringify(Rest))
+    getItemPart = JSON.parse(localStorage.getItem("Part"))
+    getItemRest = JSON.parse(localStorage.getItem("Rest"))
+    location.reload();
+  }
+)
+document.querySelector(".checkPrint").addEventListener("click", function () {
+  console.log(
+    getItemPart.min,
+    getItemPart.color,
+    getItemRest.min,
+    getItemRest.color
+  )
+
+
+})
