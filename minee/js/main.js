@@ -56,8 +56,16 @@ let temp = {
   endAngle: Math.PI * 2,
   anticlockwise: false
 }
-ctx.fillStyle = "#F7BD1F"
-ctx.strokeStyle = "#F7BD1F"
+
+// 로컬스토리지 동기화
+if (!localStorage.getItem("Part") && !localStorage.getItem("Rest")) {
+  ctx.fillStyle = "#F7BD1F"
+  ctx.strokeStyle = "#F7BD1F"
+} else {
+  ctx.fillStyle = getItemPart.color;
+  ctx.strokeStyle = getItemPart.color;
+}
+
 // arc(x, y, radius, startAngle, endAngle, anticlockwise)
 
 let eachDeg = 360 / getItemPart.min;
@@ -105,9 +113,15 @@ let RestTemp = {
   endAngle: 0,
   anticlockwise: true
 }
+if (!localStorage.getItem("Part") && !localStorage.getItem("Rest")) {
+  restCircleCtx.fillStyle = "#D9C9E8"
+  restCircleCtx.strokeStyle = "#D9C9E8"
+} else {
+  restCircleCtx.fillStyle = getItemRest.color;
+  restCircleCtx.strokeStyle = getItemRest.color;
 
-restCircleCtx.fillStyle = "#D9C9E8"
-restCircleCtx.strokeStyle = "#D9C9E8"
+}
+
 
 let restEachDeg = 360 / getItemRest.min;
 
