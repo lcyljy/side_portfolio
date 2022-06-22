@@ -25,8 +25,16 @@
       <li><a href="#">RESET</a></li>
     </ul>
   </nav> -->
+  <div class="localClear"><button>localClear</button>
+  </div>
+  <button class="checkPrint">check</button>
   <div class="mbStyle">
     <button id="mbSetting"><i class="fa-light fa-gear"></i></button>
+    <button id="mbMinee">Minee</button>
+    <button id="mbClock">Clock</button>
+    <button id="mbNav">Nav</button>
+    <button id="mbTimer">Timer</button>
+    <button id="mbAllSet">AllSet</button>
   </div>
   <div class="clockSystem">
     <div id="focusItem">
@@ -37,8 +45,8 @@
       <div class="time"><span>지정</span>
         <button>1min</button>
         <button>30min</button>
-        <button>1hour</button>
-        <button>2hour</button>
+        <!-- <button>1hour</button>
+        <button>2hour</button> -->
         <button class="clearBtn">clear</button>
       </div>
       <div class="time"><span>수동</span>
@@ -55,16 +63,16 @@
       </div> -->
     </div>
   </div>
-  <div class="timer">
+  <div class="timer hidden">
     <div class="partTimer time">
       <div>Part</div>
-      <input class="min timeSet" type="number" placeholder="001" min="0" step="1" value="1" readonly /><span> :</span>
-      <input class="sec timeSet" type="number" placeholder="0" min="-1" value="0" step="1" readonly />
+      <input class="min timeSet" type="number" placeholder="001" min="0" value="1" step="1" readonly /><span> :</span>
+      <input class="sec timeSet" type="number" placeholder="0" min="-1" step="1" readonly />
     </div>
     <div class="restTimer time">
       <div>Rest</div>
-      <input class="min timeSet" type="number" placeholder="001" min="0" step="1" value="1" readonly /><span> :</span>
-      <input class="sec timeSet" type="number" placeholder="0" min="-1" value="0" step="1" readonly />
+      <input class="min timeSet" type="number" placeholder="001" min="0" value="1" step="1" readonly /><span> :</span>
+      <input class="sec timeSet" type="number" placeholder="0" min="-1" step="1" readonly />
     </div>
   </div>
   <div class="sideNav">
@@ -72,25 +80,30 @@
       <button id="partBtn">Part</button>
       <button id="restBtn">Rest</button>
     </div>
-
-    <div class="mbColor">
-      <ul>
-        <li><button>#F7BD1F</button></li>
-        <li><button>#D9C9E8</button></li>
-        <li><button>#B3D7D2</button></li>
-        <li><button>#EBC5CF</button></li>
-        <li><button>#A2BCD2</button></li>
-        <li><button>#CDC0BC</button></li>
-        <li><button>#D2174C</button></li>
-      </ul>
-    </div>
-    <div class="check pauseBtn">
-      <button id="startBtn">시작</button>
-      <button id="pauseRealBtn">일시정지</button>
-      <button id="stopBtn">정지</button>
+    <div class="sideNavBox">
+      <div class="mbColor">
+        <ul>
+          <li><button></button></li>
+          <li><button></button></li>
+          <li><button></button></li>
+          <li><button></button></li>
+          <li><button></button></li>
+          <li><button></button></li>
+          <li><button></button></li>
+          <li><button></button></li>
+          <li><button></button></li>
+          <li><button></button></li>
+          <li><button></button></li>
+        </ul>
+      </div>
+      <div class="check pauseBtn">
+        <button id="startBtn">시작</button>
+        <button id="pauseRealBtn">일시정지</button>
+        <button id="stopBtn">정지</button>
+      </div>
     </div>
   </div>
-  <div class="canvas-wrap">
+  <div class="canvas-wrap mbOpacity">
 
     <canvas width="300" height="300" id="backCircle"></canvas>
     <canvas width="300" height="300" id="centerCircle"></canvas>

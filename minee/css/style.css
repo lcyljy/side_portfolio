@@ -100,21 +100,26 @@ nav ul li a:hover{
 }
 
 @media only screen and (max-width: 740px){
-  .clockSystem{
+  /* .clockSystem{
   display: none;
 
   
-  }
+  } */
   .focus {
     width: 80px;
     height: 50px;
     font-size: 1rem;
     line-height: 50px;
   }
-  .sideNav{
+  /* .sideNav{
   display:none;
+  } */
+  .hidden{
+    display: none;
   }
-  
+  .mbOpacity{
+    opacity: 0.4;
+  }
 /* 
   #restCircle, #canvas, #centerCircle, #backCircle{
   transform: translate(-20%, 0); } */

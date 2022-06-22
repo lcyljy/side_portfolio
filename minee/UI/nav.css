@@ -79,7 +79,7 @@
     bottom: 0;
     width: 80%;
     position: absolute;
-    height: 400px;
+    height: 200px;
     border-radius: 35px 35px 0 0;
     background-color:aquamarine;
     
@@ -95,6 +95,7 @@
     float: left;
     justify-content: space-evenly;
     padding: 10px;
+    width: 100%;
   }
   .sideNav ul li:first-child{
     border-radius: 35px;
@@ -111,12 +112,14 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     border-radius: 35px;
+
     
   }
 
 
   .sideNav ul li button {
     width: 80px;
+    height: 30px;
     padding: 5px 0 5px 0px;
     /* margin: 5px; */
     border-radius: 35px;
@@ -129,4 +132,21 @@
  .sideNav .mbColor{
     background-color: #2d2d2d;
   }
+
+  .mbColor ul {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sideNavBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
 }
