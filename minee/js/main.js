@@ -26,8 +26,8 @@ const getItemRest = JSON.parse(localStorage.getItem("Rest"))
 
 if (localStorage.getItem("Part") && localStorage.getItem("Rest")) {
   min.value = Math.floor(getItemPart.min / 60);
-  sec.value = getItemRest.min % 60;
-  // partTimerMin.value = min.value;
+  sec.value = getItemPart.min % 60;
+
   padStartNumber();
 }
 

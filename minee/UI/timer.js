@@ -20,6 +20,11 @@ let timerSec = timer.querySelector(".sec")
 
 if (localStorage.getItem("Part") && localStorage.getItem("Rest")) {
   partTimerMin.value = Math.floor(getItemPart.min / 60);
+  partTimerSec.value = getItemPart.min % 60;
+  partTimerMin.style.backgroundColor = getItemPart.color;
+  partTimerSec.style.backgroundColor = getItemPart.color;
+  restTimerMin.style.backgroundColor = getItemRest.color;
+  restTimerSec.style.backgroundColor = getItemRest.color;
 
 }
 
