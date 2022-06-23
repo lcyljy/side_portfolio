@@ -19,6 +19,7 @@ const mbNav = document.getElementById("mbNav");
 const mbTimer = document.getElementById("mbTimer");
 const mbAllSet = document.getElementById("mbAllSet");
 const mbMinee = document.getElementById("mbMinee");
+
 mbMinee.addEventListener("click", function (e) {
   e.preventDefault();
   mbCanvasWrap.classList.toggle("hidden")

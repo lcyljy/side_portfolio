@@ -217,6 +217,4 @@ document.querySelector(".checkPrint").addEventListener("click", function () {
     getItemRest.min,
     getItemRest.color
   )
-
-
 })
