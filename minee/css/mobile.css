@@ -4,7 +4,7 @@
   /* 색 나중에 지우기 */
   display: none;
   height: 2rem;
-  justify-content: end;
+  justify-content: space-between;
 
 }
 
