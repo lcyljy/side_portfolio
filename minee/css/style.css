@@ -78,45 +78,18 @@ nav ul li a:hover{
   display: none;
 }
 
-.clockSystem{
-  margin-top: 20px;
-  border: 1px solid green;
-  width: 100%;
-  display: flex;
-  height: 140px;
-  text-align: center;
-  justify-content: center;
-}
 
-.focus{
-  margin-top: 20px;
-  margin-left: 60px;
-  width: 160px;
-  height: 100px;
-  background-color: rgba(132, 255, 255, 0.3);
-  border-radius: 35px;
-  font-size: 3rem;
-  line-height: 100px;
-}
 
 @media only screen and (max-width: 740px){
-  /* .clockSystem{
-  display: none;
 
-  
-  } */
-  .focus {
-    width: 80px;
-    height: 50px;
-    font-size: 1rem;
-    line-height: 50px;
-  }
   /* .sideNav{
   display:none;
   } */
   .hidden{
     display: none;
   }
+  
+
   .mbOpacity{
     opacity: 0.4;
   }
