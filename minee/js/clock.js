@@ -70,7 +70,7 @@ sec1800Btn.addEventListener("click", function () {
 
 clearBtn.addEventListener("click", function () {
   stopBtnContent();
-  min.value = +0;
+  min.value = +1;
   sec.value = +0;
   clockSynchronization();
 })
