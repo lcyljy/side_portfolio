@@ -2,6 +2,7 @@
 const mbSetting = document.getElementById("mbSetting")
 // console.log(mbClockSystem)
 const mbClockSystem = document.querySelector(".clockSystem");
+console.log(mbClockSystem)
 const mbCanvasWrap = document.querySelector(".canvas-wrap");
 const mbSideNav = document.querySelector(".sideNav")
 
@@ -12,6 +13,7 @@ mbSetting.addEventListener("click", function (e) {
   mbSideNav.classList.toggle("hidden")
   mbCanvasWrap.classList.toggle("mbOpacity")
   document.querySelector(".timer").classList.toggle("hidden")
+
 })
 
 // 추후 해당 기능을 분리하는 것이 필요.
