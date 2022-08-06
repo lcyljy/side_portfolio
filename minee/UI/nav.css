@@ -8,7 +8,7 @@
   background-color: rgba(0,0,0, 0.4);
   z-index: 1500;
   padding: 0;
-  border: 1px solid black; 
+  border: 0.8px solid rgba(127,255,212, 0.7);
   border-radius: 35px 0 0 35px ;
   
 }
@@ -112,10 +112,7 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     border-radius: 35px;
-
-    
   }
-
 
   .sideNav ul li button {
     width: 80px;
@@ -149,4 +146,31 @@
     
   }
 
+}
+
+@media only screen and (max-width: 480px){
+  .sideNav{
+    top: auto;
+    left: 10%;
+    right: 10%;
+    bottom: 0;
+    width: 80%;
+    position: absolute;
+    height: 200px;
+    border-radius: 35px 35px 0 0;
+    background-color:aquamarine;
+    
+  }
+
+  .sideNav ul li button {
+    width: 28px;
+    height: 20px;
+    padding: 5px 0 5px 0px;
+    /* margin: 5px; */
+    border-radius: 35px;
+  }
+
+  .sideNav .check button {
+    border-radius: 35px;
+  }
 }
