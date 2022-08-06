@@ -1,9 +1,6 @@
 .mbStyle{
-  
-
-  /* 색 나중에 지우기 */
-  display: none;
-  height: 2rem;
+  display: flex;
+  height: 1rem;
   justify-content: space-between;
 
 }
@@ -15,8 +12,9 @@
   body{
     width: max-width;
   }
-  .mbStyle{
-    display:flex;
-  }
 
+  .hidden{
+    display: none;
+  }
+  
 }
