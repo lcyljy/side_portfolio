@@ -210,11 +210,3 @@ localClearBtn.addEventListener("click",
     location.reload();
   }
 )
-document.querySelector(".checkPrint").addEventListener("click", function () {
-  console.log(
-    getItemPart.min,
-    getItemPart.color,
-    getItemRest.min,
-    getItemRest.color
-  )
-})
